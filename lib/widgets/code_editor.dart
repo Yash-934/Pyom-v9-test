@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -234,7 +233,7 @@ class _CodeEditorState extends State<CodeEditor> {
                       color: isDark ? const Color(0xFF6C7086) : const Color(0xFF9EA0AC),
                       fontSize: ep.fontSize * 0.80,
                       fontFamily: 'monospace',
-                      fontFeatures: [FontFeature.tabularFigures()],
+                      fontFeatures: const [FontFeature.tabularFigures()],
                     ),
                     background: isDark ? const Color(0xFF181825) : const Color(0xFFF0F0F0),
                     showFoldingHandles: false,

@@ -357,7 +357,7 @@ class _ModelManagerScreenState extends State<ModelManagerScreen> {
   Future<void> _importModel() async {
     try {
       final result = await FilePicker.platform.pickFiles(
-        allowMultiple: false,
+        
       );
       if (result == null || result.files.isEmpty) return;
       final file = result.files.first;

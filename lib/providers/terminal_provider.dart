@@ -58,7 +58,9 @@ class TerminalProvider extends ChangeNotifier {
       _lines.add(TerminalLine(text: line, type: type, timestamp: DateTime.now()));
     }
     // Memory cap
-    while (_lines.length > 2000) _lines.removeAt(0);
+    while (_lines.length > 2000) {
+      _lines.removeAt(0);
+    }
     notifyListeners();
   }
 

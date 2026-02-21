@@ -108,7 +108,7 @@ class _TerminalPanelState extends State<TerminalPanel> {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: const BoxDecoration(
         color: _Mocha.surface,
-        border: Border(bottom: BorderSide(color: _Mocha.overlay, width: 1)),
+        border: Border(bottom: BorderSide(color: _Mocha.overlay)),
       ),
       child: Row(
         children: [
@@ -193,9 +193,9 @@ class _TerminalPanelState extends State<TerminalPanel> {
     );
   }
 
-  Widget _emptyState() => Column(
+  Widget _emptyState() => const Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const [
+    children: [
       Icon(Icons.terminal, size: 32, color: _Mocha.overlay),
       SizedBox(height: 8),
       Text(
@@ -242,11 +242,10 @@ class _TerminalPanelState extends State<TerminalPanel> {
       constraints: const BoxConstraints(minHeight: 42),
       decoration: const BoxDecoration(
         color: _Mocha.surface,
-        border: Border(top: BorderSide(color: _Mocha.overlay, width: 1)),
+        border: Border(top: BorderSide(color: _Mocha.overlay)),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Prompt
           Text(
@@ -275,7 +274,6 @@ class _TerminalPanelState extends State<TerminalPanel> {
               child: TextField(
                 controller: _inputCtrl,
                 focusNode:  _focusNode,
-                autofocus:  false,
                 style: const TextStyle(
                   fontFamily: 'monospace',
                   fontSize:   13,
@@ -316,7 +314,6 @@ class _TerminalPanelState extends State<TerminalPanel> {
           color: tp.isExecuting ? _Mocha.overlay : _Mocha.mauve.withAlpha(30),
           border: Border.all(
             color: tp.isExecuting ? _Mocha.muted : _Mocha.mauve,
-            width: 1,
           ),
           borderRadius: BorderRadius.circular(6),
         ),
